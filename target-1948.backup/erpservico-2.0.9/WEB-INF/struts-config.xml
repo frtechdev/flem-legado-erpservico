@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+    <form-beans>
+        <form-bean name="dataForm" type="org.apache.struts.action.DynaActionForm">
+            <form-property name="dia" type="java.lang.String" />
+            <form-property name="mes" type="java.lang.String" />
+            <form-property name="ano" type="java.lang.String" />
+        </form-bean>
+        <form-bean name="valeForm" type="org.apache.struts.action.DynaActionForm">
+            <form-property name="quantidade" type="java.lang.Integer" />
+            <form-property name="matricula" type="java.lang.Integer" />
+        </form-bean>
+        <form-bean name="cargaForm" type="org.apache.struts.action.DynaActionForm">
+            <form-property name="quantidade" type="java.lang.Integer" />
+            <form-property name="mes" type="java.lang.Integer" />
+        </form-bean>
+        <form-bean name="planservForm" type="org.apache.struts.action.DynaActionForm" >
+            <form-property name="funcionario" type="java.lang.String" />
+            <form-property name="matricula" type="java.lang.String" />
+            <form-property name="beneficiario" type="java.lang.String" />
+            <form-property name="dtoperacao" type="java.lang.String" />
+            <form-property name="dtbeneficio" type="java.lang.String" />
+            <form-property name="operacao" type="java.lang.String" />
+            <form-property name="dtcasamento" type="java.lang.String" />
+            <form-property name="dtinicio" type="java.lang.String" />
+            <form-property name="cdPlano" type="java.lang.String" />
+            <form-property name="dtretorno" type="java.lang.String" />
+            <form-property name="nome" type="java.lang.String"/>
+            <form-property name="nomePlano" type="java.lang.String" />
+            <form-property name="nomeParentesco" type="java.lang.String"/>
+            <form-property name="nomeOperacao" type="java.lang.String"/>
+        </form-bean>
+        
+        <form-bean name="arquivomensalForm" type="org.apache.struts.action.DynaActionForm" >
+            <form-property name="mes" type="java.lang.String" />
+            <form-property name="ano" type="java.lang.String" />
+            <form-property name="emTela" type="java.lang.String" />
+        </form-bean>
+        
+        <form-bean name="validacaoFolhaForm" type="org.apache.struts.action.DynaActionForm" >
+            <form-property name="mes" type="java.lang.String" />
+            <form-property name="ano" type="java.lang.String" />
+        </form-bean>
+        
+        <!--Modulo ebal -->
+        <form-bean name="ebalForm" type="org.apache.struts.action.DynaActionForm" >
+            <form-property name="arquivoCredicesta" type="org.apache.struts.upload.FormFile" />
+            <form-property name="idArquivoCredicesta" type="java.lang.String" />
+        </form-bean>
+        
+        <form-bean name="processoForm" type="org.apache.struts.action.DynaActionForm" >
+            <form-property name="mes" type="java.lang.String" />
+            <form-property name="ano" type="java.lang.String" />
+        </form-bean>
+        
+        <form-bean name="fonteRecursoForm" type="org.apache.struts.action.DynaActionForm" >
+            <form-property name="codigo" type="java.lang.String" />
+            <form-property name="dataInicio" type="java.lang.String" />
+            <form-property name="dataFim" type="java.lang.String" />
+            <form-property name="apdid" type="java.lang.String" />
+            <form-property name="apdtp" type="java.lang.String" />
+        </form-bean>
+        
+        <form-bean name="ativoFixoForm" type="org.apache.struts.action.DynaActionForm">
+            <form-property name="codigo" type="java.lang.String" />
+            <form-property name="descricao" type="java.lang.String" />
+            <form-property name="responsavel" type="java.lang.String" />
+            <form-property name="detentor" type="java.lang.String" />
+            <form-property name="tombo" type="java.lang.String" />
+            <form-property name="localizacao" type="java.lang.String" />
+            <form-property name="serial" type="java.lang.String" />
+            <form-property name="situacao" type="java.lang.String" />
+            <form-property name="ano" type="java.lang.String" />
+            <form-property name="tipo" type="java.lang.String" />
+        </form-bean>
+        <!--Modulo rpa -->
+        <form-bean name="rpaForm" type="org.apache.struts.action.DynaActionForm" >
+            <form-property name="id" type="java.lang.String"/>
+        </form-bean>
+        
+        <!--Modulo Caixa -->
+        <form-bean name="caixaForm" type="org.apache.struts.action.DynaActionForm" >
+            <form-property name="id" type="java.lang.String"/>
+            <form-property name="data_Inicio" type="java.lang.String"/>
+            <form-property name="data_Fim" type="java.lang.String"/>
+            <form-property name="emTela" type="java.lang.Boolean"/>
+            <form-property name="func" type="br.org.flem.sac.negocio.Caixa"/>
+        </form-bean>
+
+        <!--Modulo Departamento-->
+        <form-bean name="departamentoForm" type="org.apache.struts.action.DynaActionForm" >
+            <form-property name="departamento" type="br.org.flem.sac.negocio.DepartamentoERP"/>
+        </form-bean>
+        
+        <form-bean name="relatorioForm" type="org.apache.struts.action.DynaActionForm" >
+            <form-property name="departamentos" type="java.lang.String[]"/>
+            <form-property name="departamentosEscolhidos" type="java.lang.String[]"/>
+            <form-property name="dataInicial" type="java.lang.String"/>
+            <form-property name="dataFinal" type="java.lang.String"/>
+        </form-bean>
+        
+        <form-bean name="contratoForm" type="org.apache.struts.action.DynaActionForm">
+            <form-property name="id" type="java.lang.String" />
+            <form-property name="idFornecedor" type="java.lang.String" />
+            <form-property name="dataInicioVigencia" type="java.lang.String" />
+            <form-property name="dataFimVigencia" type="java.lang.String" />
+            <form-property name="dataLimiteAviso" type="java.lang.String" />
+            <form-property name="aviso" type="java.lang.String" />
+            <form-property name="numero" type="java.lang.String" />
+            <form-property name="valor" type="java.lang.String" />
+            <form-property name="parcelasTotal" type="java.lang.String" />
+            <form-property name="objeto" type="java.lang.String" />
+            <form-property name="classificacao" type="java.lang.String"/>
+            <form-property name="observacao" type="java.lang.String"/>
+            <form-property name="contrato" type="java.lang.String"/>
+            <form-property name="fornecedor" type="java.lang.String"/>
+            <form-property name="numeroContrato" type="java.lang.String"/>
+            <form-property name="numeroSD" type="java.lang.String"/>
+            <form-property name="centroCusto" type="java.lang.String"/>
+            <form-property name="situacao" type="java.lang.String"/>
+        </form-bean>
+        
+        <form-bean name="parcelaForm" type="org.apache.struts.action.DynaActionForm">
+            <form-property name="id" type="java.lang.String" />
+            <form-property name="idContrato" type="java.lang.String" />
+            <form-property name="dataPagamento" type="java.lang.String" />
+            <form-property name="notaFiscal" type="java.lang.String" />
+            <form-property name="valor" type="java.lang.String" />
+        </form-bean>
+        
+        <form-bean name="aditivoForm" type="org.apache.struts.action.DynaActionForm">
+            <form-property name="id" type="java.lang.String" />
+            <form-property name="dataInicioVigencia" type="java.lang.String" />
+            <form-property name="dataFimVigencia" type="java.lang.String" />
+            <form-property name="idContrato" type="java.lang.String" />
+            <form-property name="valor" type="java.lang.String" />
+        </form-bean>
+        
+        <form-bean name="contaForm" type="org.apache.struts.action.DynaActionForm" >
+            <form-property name="funcionario" type="java.lang.String" />
+            <form-property name="matricula" type="java.lang.String" />
+            <form-property name="beneficiario" type="java.lang.String" />
+            <form-property name="nome" type="java.lang.String"/>
+            <form-property name="agencia" type="java.lang.String"/>
+            <form-property name="op" type="java.lang.String"/>
+            <form-property name="conta" type="java.lang.String"/>
+            <form-property name="digito" type="java.lang.String"/>
+            <form-property name="cod_banco" type="java.lang.String"/>
+            <form-property name="func" type="br.org.flem.sac.negocio.Caixa"/>
+        </form-bean>
+        
+        
+    </form-beans>
+    <global-exceptions>
+        
+    </global-exceptions>
+    
+    <global-forwards>
+        <forward name="home"  path="/Home.do"/>
+        <forward name="redirect" path="/redirect.jsp"/>
+    </global-forwards>
+    
+    <action-mappings>
+        <action path="/Home" forward="/index.jsp"/>
+        
+        <action path="/Autonomo" name="dataForm" type="br.org.flem.sac.web.struts.action.AutonomoAction" parameter="metodo" scope="request" validate="false" >
+            <forward name="autonomo" path="/pages/autonomos.jsp"/>
+            <forward name="lista" path="/pages/lista_autonomos.jsp"/>
+            <forward name="inconsistentes" path="/pages/lista_inconsistentes.jsp"/>
+        </action>
+        <action path="/ValorAutonomo" name="dataForm" type="br.org.flem.sac.web.struts.action.ValoresAutonomoAction" parameter="metodo" scope="request" validate="true" >
+            <forward name="valores" path="/pages/valores.jsp"/>
+            <forward name="lista" path="/pages/lista_valores.jsp"/>
+            <forward name="listaarquivos" path="/pages/arquivos.jsp"/>
+
+
+        </action>
+        <action path="/ValorAutonomoAno" name="dataForm" type="br.org.flem.sac.web.struts.action.ValoresAnoAutonomoAction" parameter="metodo" scope="request" validate="true" >
+            <forward name="lista" path="/pages/lista_valoresano.jsp"/>
+            <forward name="valores" path="/pages/valoresano.jsp"/>
+        </action>
+        
+        <action path="/Planserv" name="planservForm" type="br.org.flem.sac.web.struts.action.PlanservAction" parameter="metodo" scope="request" validate="true" >
+            <forward name="inicio" path="/pages/planserv/planserv.jsp" />
+            <forward name="arquivo" path="/pages/planserv/arquivo.jsp" />
+            <forward name="beneficiarios" path="/pages/planserv/beneficiarios.jsp" />
+        </action>
+        
+        <action path="/ArquivoMensal" name="arquivomensalForm" type="br.org.flem.sac.web.struts.action.PlanservAction" parameter="metodo" scope="request" validate="true">
+            <forward name="inicio" path="/pages/planserv/arquivoMensal.jsp" />
+        </action>
+        
+        <action path="/ValidacaoFolhaPlanserv" name="validacaoFolhaForm" type="br.org.flem.sac.web.struts.action.ValidacaoFolhaPlanservAction" parameter="metodo" scope="request" validate="true">
+            <forward name="validacaoFolha" path="/pages/planserv/validacaoFolha.jsp"/>
+            <forward name="xmlEnvioValidacao" path="/pages/planserv/xmlEnvioValidacao.jsp"/>
+        </action>
+        
+        <!-- modulo ebal -->
+        <action path="/Ebal" name="ebalForm" type="br.org.flem.sac.web.struts.action.EbalAction" parameter="metodo" scope="request" validate="true">
+            <forward name="lista" path="/pages/ebal/lista.jsp" />
+        </action>
+        
+        <action path="/ControleProcesso" name="processoForm" type="br.org.flem.sac.web.struts.action.ProcessoAction" parameter="metodo" scope="request" validate="true">
+            <forward name="lista" path="/pages/controleprocesso/lista_mes.jsp" />
+        </action>
+        
+        <action path="/FonteRecurso" name="fonteRecursoForm" type="br.org.flem.sac.web.struts.action.FonteRecursoAction" parameter="metodo" scope="request" validate="true">
+            <forward name="lista" path="/pages/compromissos/lista.jsp" />
+            <forward name="detalhe" path="/pages/compromissos/detalhe.jsp" />
+        </action>
+        
+        <action path="/DespesaViagem" name="fonteRecursoForm" type="br.org.flem.sac.web.struts.action.DespesaViagemAction" parameter="metodo" scope="request" validate="true">
+            <forward name="lista" path="/pages/despesaviagem/lista.jsp" />
+        </action>
+        
+        
+        <!-- modulo Rpa -->
+        <action path="/Rpa" name="rpaForm" type="br.org.flem.sac.web.struts.action.RpaAction" parameter="metodo" scope="request" validate="true">
+            <forward name="lista" path="/pages/rpa/lista.jsp" />
+        </action>
+        <!-- modulo Caixa -->
+        <action path="/Caixa" name="caixaForm" type="br.org.flem.sac.web.struts.action.CaixaAction" parameter="metodo" scope="request" validate="true">
+            <forward name="lista" path="/pages/caixa/filtrar.jsp" />
+            <forward name="area" path="/pages/caixa/listar.jsp" />
+            <forward name="editar" path="/pages/caixa/alterar.jsp" />
+            <forward name="redirect" path="Caixa.do" redirect="true"/>
+        </action>
+        <action path="/Relatorio" name="relatorioForm" type="br.org.flem.sac.web.struts.action.RelatorioAction" parameter="metodo" scope="request" validate="true">
+            <forward name="relatorioDemitidos" path="/pages/demitidos/lista.jsp"/>
+        </action>
+        
+        <action path="/AtivoFixo" name="ativoFixoForm" type="br.org.flem.sac.web.struts.action.AtivoFixoAction" parameter="metodo" scope="request" validate="true">
+            <forward name="lista" path="/pages/ativofixo/ativofixo.jsp"/>
+        </action>
+
+        <action path="/ReceitaProjetos" name="ativoFixoForm" type="br.org.flem.sac.web.struts.action.ReceitaProjetosAction" parameter="metodo" scope="request" validate="true">
+            <forward name="lista" path="/pages/custos/receitaProjetos.jsp"/>
+            <forward name="detalhe" path="/pages/custos/detalheReceitaProjetos.jsp"/>
+        </action>
+
+        <!--Modulo Departamento-->
+        <action path="/Departamento" name="departamentoForm" type="br.org.flem.sac.web.struts.action.DepartamentoERPAction" parameter="metodo" scope="request" validate="true">
+            <forward name="lista" path="/pages/departamento/lista.jsp"/>
+            <forward name="editar" path="/pages/departamento/editar.jsp"/>
+            <forward name="novo" path="/pages/departamento/novo.jsp"/>
+            <forward name="redirect" path="/Departamento.do" redirect="true"/>
+        </action>
+        
+        <action path="/Contrato" name="contratoForm" type="br.org.flem.sac.web.struts.action.ContratoAction" parameter="metodo" scope="request" validate="true">
+            <forward name="lista" path="/pages/contrato/lista.jsp" />
+            <forward name="novo" path="/pages/contrato/novo.jsp" />
+            <forward name="alterar" path="/pages/contrato/alterar.jsp" />
+            <forward name="redirect" path="Contrato.do" redirect="true"/>
+        </action>
+        
+        <action path="/Parcela" name="parcelaForm" type="br.org.flem.sac.web.struts.action.ParcelaAction" parameter="metodo" scope="request" validate="true">
+            <forward name="lista" path="/pages/contrato/parcela/lista.jsp" />
+            <forward name="novo" path="/pages/contrato/parcela/novo.jsp" />
+            <forward name="alterar" path="/pages/contrato/parcela/alterar.jsp" />
+            <forward name="redirect" path="Parcela.do" redirect="true"/>
+        </action>
+        
+        <action path="/Aditivo" name="aditivoForm" type="br.org.flem.sac.web.struts.action.AditivoAction" parameter="metodo" scope="request" validate="true">
+            <forward name="lista" path="/pages/contrato/aditivo/lista.jsp" />
+            <forward name="novo" path="/pages/contrato/aditivo/novo.jsp" />
+            <forward name="alterar" path="/pages/contrato/aditivo/alterar.jsp" />
+            <forward name="redirect" path="Aditivo.do" redirect="true"/>
+        </action>
+        
+        <action path="/Conta" name="contaForm" type="br.org.flem.sac.web.struts.action.ContaAction" parameter="metodo" scope="request" validate="true" >
+            <forward name="inicio" path="/pages/conta/conta.jsp" />
+            <forward name="editar" path="/pages/conta/alterar.jsp" />
+        </action>
+
+    </action-mappings>
+    
+    <message-resources parameter="applicationresource"/>
+    
+    <!-- ========================= Validator plugin ================================= -->
+    <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+        <set-property property="pathnames" value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+    </plug-in>
+</struts-config>

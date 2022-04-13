@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE form-validation PUBLIC
+"-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.1.3//EN"
+"http://jakarta.apache.org/commons/dtds/validator_1_1_3.dtd">
+<form-validation>
+    <global>
+        <constant>
+            <constant-name>postalCode</constant-name>
+            <constant-value>^\d{5}\d*$</constant-value>
+        </constant>
+        
+        
+    </global>
+    
+    <formset>
+        <form name="planservForm">        
+            <field property="matricula" depends="required">
+                <msg resource="false" name="required" key="Informe a Matricula do Funcionario." />
+            </field>            
+            
+            <field property="beneficiario" depends="required">
+                <msg resource="false" name="required" key="Selecione um Funcionario ou Dependente." />
+            </field>           
+            <field property="operacao" depends="required">
+                <msg resource="false" name="required" key="Selecione a operação." />
+            </field>
+            
+            <field property="dtoperacao" depends="required, date">
+                <var>
+                    <var-name>datePattern</var-name>
+                    <var-value>dd/MM/yyyy</var-value>
+                </var>
+                <msg resource="false" name="required" key="Informe a data da operação." />
+                <msg resource="false" name="date" key="Data inválida." />
+            </field>
+            <field property="cdPlano" depends="required">
+                <msg resource="false" name="required" key="Selecione o Plano" />
+            </field>
+        </form>
+        
+        <form name="arquivomensalForm">        
+            <field property="mes" depends="required">
+                <msg resource="false" name="required" key="Selecione o mes." />
+            </field>            
+            
+            <field property="ano" depends="required">
+                <msg resource="false" name="required" key="Selecione o ano." />
+            </field> 
+        </form>
+        
+        <form name="ebalForm">        
+            <field property="arquivoCredicesta" depends="required">
+                <msg resource="false" name="required" key="Informe o arquivo." />
+            </field>                        
+        </form>        
+        
+        
+        <form name="processoForm">        
+            <field property="mes" depends="required">
+                <msg resource="false" name="required" key="Selecione o mes." />
+            </field>            
+            
+            <field property="ano" depends="required">
+                <msg resource="false" name="required" key="Selecione o ano." />
+            </field> 
+        </form>
+        
+        <form name="fonteRecursoForm">        
+            <field property="codigo" depends="required">
+                <msg resource="false" name="required" key="Informe a Fonte de Recurso." />
+            </field>
+        </form>
+
+        <form name="departamentoForm">
+            <field property="departamento.cod_lotacao_dominio" depends="required">
+                <msg resource="false" name="required" key="Selecione a locação da Domínio" />
+            </field>
+            <field property="departamento.cod_lotacao_hr" depends="required">
+                <msg resource="false" name="required" key="Informar a sigla da locação" />
+            </field>
+            <field property="departamento.nom_dept" depends="required">
+                <msg resource="false" name="required" key="Informe o Nome." />
+            </field>
+            <field property="departamento.cod_ccusto" depends="required">
+                <msg resource="false" name="required" key="Selecione o Centro de Custo." />
+            </field>
+            <field property="departamento.cod_cresp" depends="required">
+                <msg resource="false" name="required" key="Selecione o Centro de Responsabilidade" />
+            </field>
+        </form>
+        
+        <form name="relatorioForm">        
+
+            <field property="departamentosEscolhidos" depends="required">
+                <msg resource="false" name="required" key="Selecione um ou mais departamentos." />
+            </field>           
+
+            <field property="dataInicial" depends="required, date">
+                <var>
+                    <var-name>datePattern</var-name>
+                    <var-value>dd/MM/yyyy</var-value>
+                </var>
+                <msg resource="false" name="required" key="Informe a data inicial." />
+                <msg resource="false" name="date" key="Data inicial inválida." />
+            </field>
+             <field property="dataFinal" depends="required, date">
+                <var>
+                    <var-name>datePattern</var-name>
+                    <var-value>dd/MM/yyyy</var-value>
+                </var>
+                <msg resource="false" name="required" key="Informe a data final." />
+                <msg resource="false" name="date" key="Data final inválida." />
+            </field>
+            
+        </form>
+        
+        <form name="contratoForm">
+            <field property="dataInicioVigencia" depends="required">
+                <msg resource="false" name="required" key="Informe data de Início da Vigência!" />
+            </field>
+            <field property="dataFimVigencia" depends="required">
+                <msg resource="false" name="required" key="Informe data de Fim da Vigência!" />
+            </field>
+            <field property="idFornecedor" depends="required">
+                <msg resource="false" name="required" key="Selecione um Fornecedor!" />
+            </field>
+            <field property="numero" depends="required">
+                <msg resource="false" name="required" key="Informe um Número!" />
+            </field>
+            <field property="valor" depends="required">
+                <msg resource="false" name="required" key="Informe o Valor!" />
+            </field>
+            <field property="situacao" depends="required">
+                <msg resource="false" name="required" key="Informe a Situação!" />
+            </field>
+        </form>
+        
+        <form name="parcelaForm">
+            <field property="dataPagamento" depends="required,date">
+                <msg resource="false" name="required" key="Informe data de pagamento!" />
+                <msg resource="false" name="date" key="Data inválida." />
+                <var>
+                    <var-name>datePattern</var-name>
+                    <var-value>dd/MM/yyyy</var-value>
+                </var>
+            </field>
+            <field property="notaFiscal" depends="required">
+                <msg resource="false" name="required" key="Informe a nota Fiscal!" />
+            </field>
+            <field property="valor" depends="required">
+                <msg resource="false" name="required" key="Informe o valor da parcela!" />
+            </field>
+            
+            
+        </form>
+
+        <form name="aditivoForm">
+            <field property="dataInicioVigencia" depends="required,date">
+                <msg resource="false" name="required" key="Informe data de Início da Vigência!" />
+                <msg resource="false" name="date" key="Data inválida." />
+                <var>
+                    <var-name>datePattern</var-name>
+                    <var-value>dd/MM/yyyy</var-value>
+                </var>
+            </field>
+            <field property="dataFimVigencia" depends="required,date">
+                <msg resource="false" name="required" key="Informe data de Fim da Vigência!" />
+                <msg resource="false" name="date" key="Data inválida." />
+                <var>
+                    <var-name>datePattern</var-name>
+                    <var-value>dd/MM/yyyy</var-value>
+                </var>
+            </field>
+            <field property="valor" depends="required">
+                <msg resource="false" name="required" key="Informe o Valor!" />
+            </field>
+        </form>
+
+    </formset>
+    
+    
+</form-validation>

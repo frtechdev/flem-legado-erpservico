@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration
+PUBLIC "-//Hibernate/Hibernate Configuration DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<!--
+    Document   : hibernate.cfg.xml
+    Created on : 10 de Setembro de 2006, 11:19
+    Author     : mario
+    Description:
+        Purpose of the document follows.
+        update or create
+-->
+
+
+<hibernate-configuration>
+    
+    <session-factory name="session-control">
+        
+        <!-- alterar os emails do Job no arquivo config.properties de acordo com o servidor -->
+        
+        <!-- DESENVOLVIMENTO -->
+<!--        <property name="hibernate.connection.url">jdbc:jtds:sqlserver://trancoso;databaseName=BDERPSERVICE_TEST;</property>
+        <property name="hibernate.connection.username">desenvolvimento</property>
+        <property name="hibernate.connection.password">ntoflem</property>-->
+        
+        <!-- PRODUCAO -->
+        <property name="hibernate.connection.url">jdbc:jtds:sqlserver://servidorbd;databaseName=BDERPSERVICE;</property>
+        <property name="hibernate.connection.username">erpservice</property>
+        <property name="hibernate.connection.password">ql03hesj</property>
+        
+        <property name="hibernate.connection.driver_class">net.sourceforge.jtds.jdbc.Driver</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+        <!--property name="hibernate.show_sql">true</property-->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
+        <mapping class="br.org.flem.sac.negocio.Propriedade" />
+        <mapping class="br.org.flem.sac.negocio.ArquivoCredicesta" />
+        <mapping class="br.org.flem.sac.negocio.ArquivosPlanserv" />
+        <mapping class="br.org.flem.sac.negocio.Autonomo" />
+        <mapping class="br.org.flem.sac.negocio.DepartamentoERP" />
+        <mapping class="br.org.flem.sac.negocio.CentroResponsabilidadeERP" />
+        <mapping class="br.org.flem.sac.negocio.Titular" />
+        <mapping class="br.org.flem.sac.negocio.Contrato" />
+        <mapping class="br.org.flem.sac.negocio.Aditivo" />
+        <mapping class="br.org.flem.sac.negocio.Parcela" />
+        <mapping class="br.org.flem.sac.negocio.Caixa" />
+    </session-factory>
+    
+</hibernate-configuration>

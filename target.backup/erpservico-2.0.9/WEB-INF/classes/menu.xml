@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE grupo SYSTEM "padrao.dtd">
+<grupo nome="ERP">
+    <menu nome="Consist HR">
+        <item nome="Autônomos" href="Autonomo.do?metodo=opcoes" perfil="expauton" />
+        <item nome="Valores de Autônomos" href="ValorAutonomo.do?metodo=opcoes" perfil="expauton" />
+        <item nome="Arquivos Folha" href="ValorAutonomo.do?metodo=listaArquivos" perfil="expauton" />
+        <item nome="Valores de Autônomos Ano" href="ValorAutonomoAno.do?metodo=opcoes" perfil="expauton" />
+    </menu>
+    <menu nome="Convênios">
+        <item nome="Planserv" href="Planserv.do" perfil="planserv" />
+        <!--   <item nome="Arquivo Mensal" href="Planserv.do?metodo=arquivoMensal" perfil="planserv" />
+        <item nome="Arquivo Mensal (mês anterior)" href="Planserv.do?metodo=arquivoMensalAnterior" perfil="planserv" />!-->
+        <item nome="Arquivo Mensal" href="ArquivoMensal.do" perfil="planserv" />
+        <item nome="Validação da Folha" href="ValidacaoFolhaPlanserv.do" perfil="planserv" />
+    </menu>
+    <menu nome="Ebal">
+        <item nome="Arquivos" href="Ebal.do" perfil="ebal" /> <!-- ebal -->       
+    </menu>    
+    <menu nome="RPA">
+        <item nome="Exportar Arquivo" href="Rpa.do" perfil="rpa" />
+    </menu> 
+<!--    <menu nome="Caixa Economica">
+        <item nome="Exportar Arquivo admissao" href="Caixa.do" perfil="rpa" />
+        <item nome="Area de Transfrencia" href="Caixa.do?metodo=listar" perfil="rpa" />
+    </menu>-->
+    <menu nome="Abertura de Conta">
+        <item nome="Gerar Arquivo" href="Conta.do" perfil="*" />
+    </menu>
+    <menu nome="Controle de Processos">
+        <item nome="Processos por Mes " href="ControleProcesso.do" perfil="processo" />
+    </menu>
+    <menu nome="Compromissos">
+        <item nome="Compromissos por Fonte de Recurso" href="FonteRecurso.do" perfil="processo" />
+    </menu>
+    
+    <menu nome="Viagens">
+        <item nome="Despesas de Viagens" href="DespesaViagem.do" perfil="processo" />
+    </menu>
+    <menu nome="Receitas da Flem">
+        <item nome="Receitas de Projetos " href="ReceitaProjetos.do" perfil="recproj" />
+    </menu>
+    <menu nome="Departamentos">
+        <item nome="Lista" href="Departamento.do" perfil="*" />
+        <item nome="Novo" href="Departamento.do?metodo=novo" perfil="*" />
+        <item nome="Relatorio Demitidos" href="Relatorio.do?metodo=filtrarDemitidos" perfil="*"/>
+    </menu>
+    <menu nome="Contratos">
+        <item nome="Lista" href="Contrato.do" perfil="*" />
+    </menu>
+    <menu nome="Sistema">
+        <item nome="Sair" href="logout" perfil="*" />
+    </menu>
+</grupo>
